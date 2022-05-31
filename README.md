@@ -2,6 +2,7 @@
 
 ---
 
-Eso es todo.
+Agregando esta línea para probar si funciona magit.
 
+Eso es todo.
 
