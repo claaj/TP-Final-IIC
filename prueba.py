@@ -8,4 +8,3 @@ if elegir_mon == 1:
 else:
     for i in range(0,10):    
         print(f'{(random.uniform(99,9999)*0.04193):.2f} soles')
-
