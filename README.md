@@ -1,8 +1,9 @@
 # TP Final de Introducción a Ingeniería en Computación
 
----
+La consigna del trabajo práctico final es:
 
-Agregando esta línea para probar si funciona magit.
+**agregar consigna** 
 
-Eso es todo.
+
+
 
