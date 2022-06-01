@@ -12,7 +12,7 @@ Retrocedemos en el tiempo, y estamos en el año 1985. El banco InterBanca, es un
 
 - D) El menú de opciones tiene las siguientes funcionalidades:
 
-- 1. Consultas.
+  1. Consultas.
   
   2. Retiros.
   
@@ -36,8 +36,8 @@ Retrocedemos en el tiempo, y estamos en el año 1985. El banco InterBanca, es un
 
 - I) Si el cliente selecciona la opción 4, se finaliza la transacción en el cajero y se expulsa la tarjeta.
   **Nota:** Para poner a prueba el programa implementado, teniendo en cuenta que no estamos manejando Base de Datos, se probará contra el siguiente usuario registrado.
-  **Clave:** 12345
-  **DNI:** 12345678
-  **Cuenta de destino en la cual se hará la transferencia:** 98765
-  **Saldo de la cuenta:** en Pesos Argentinos 85.000 (en Soles Peruanos 3.564)
+  - **Clave:** 12345
+  - **DNI:** 12345678
+  - **Cuenta de destino en la cual se hará la transferencia:** 98765
+  - **Saldo de la cuenta:** en Pesos Argentinos 85.000 (en Soles Peruanos 3.564)
   Esta información se mantendrá constante (a excepción del saldo) durante la ejecución del algoritmo.
