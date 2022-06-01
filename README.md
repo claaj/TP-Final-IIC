@@ -38,7 +38,7 @@ Retrocedemos en el tiempo, y estamos en el año 1985. El banco InterBanca, es un
 
 **Nota:** Para poner a prueba el programa implementado, teniendo en cuenta que no estamos manejando Base de Datos, se probará contra el siguiente usuario registrado.
 
-- **Clave:** 12345
+  - **Clave:** 12345
   - **DNI:** 12345678
   - **Cuenta de destino en la cual se hará la transferencia:** 98765
   - **Saldo de la cuenta:** en Pesos Argentinos 85.000 (en Soles Peruanos 3.564)
