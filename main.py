@@ -146,7 +146,7 @@ def consultas ():
         if imp_ticket == 1:
             print("Ticket impreso, retírelo")
         else:
-            print(f"Tu cuenta en {moneda} es de {cuenta}.")
+            print(f"Tu cuenta en {moneda} es de {cuenta:.2f}.")
     else:
         movimientos()
 
