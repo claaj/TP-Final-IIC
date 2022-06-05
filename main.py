@@ -7,7 +7,8 @@
 saldo_pesos = 85000
 conv_soles = 0.04193
 verificado = 0
-
+cuenta = 0
+moneda = ""
 
 def verificacion ():
     global verificado
@@ -45,6 +46,28 @@ def menuPrincipal ():
         elif opcion == 3:
             print('Transferencia')
 
+def eleccionMoneda ():
+    global cuenta, moneda
+    elegir_mon = 0
+    elegir_mon = int(input("1)Pesos 2)Soles: "))
+    if elegir_mon == 1:
+        cuenta = saldo_pesos
+        moneda = "pesos"
+    else:
+        cuenta = saldo_pesos * conv_soles
+        moneda = "soles"
+
+def consultas ():
+    opcion_con = 0
+    imp_ticket = 0
+    opcion_con = int(input("1)Posición Global 2)Movimientos: "))
+    if opcion_con == 1:
+        eleccionMoneda()
+        imp_ticket = int(input("1)Ticket 2)Ver en pantalla: "))
+        if imp_ticket == 1:
+            print("Ticket impreso, retírelo")
+        else:
+            print(f"Tu cuenta en {moneda} es de {cuenta}.")
 
 
 
