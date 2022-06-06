@@ -6,11 +6,11 @@
 ################
 import random
 
-saldo_pesos = 85000
+saldo_pesos = 85000.00
 conv_soles = 0.04193
 verificado = 0
-cuenta = 0
-monto = 0
+cuenta = 0.00
+monto = 0.00
 moneda = ""
 cuenta_destino = 98765
 monto_ok = False
@@ -34,25 +34,25 @@ def transferencias():
             print('Operación exitosa')
         else:
             cuenta -= monto
-            print('Cuenta erronea, en 3 días puede solicitar una devolución')
+            print('Cuenta errónea, en 3 días visualizará la devolución en sus "Movimientos"')
         cuentaSaldo()
 
 def ingresoMonto ():
     global cuenta, moneda, monto, monto_ok
-    monto = 0
+    monto = 0.00
     monto_ok = False
     intentos = 0
     salida = False
     while salida == False:
         intentos += 1
-        monto = int(input(f'Ingresar monto en {moneda}: '))
+        monto = float(input(f'Ingresar monto en {moneda}: '))
         if monto <= cuenta:
             monto_ok = True
             salida = True
         elif intentos == 2:
             salida = True
         else:
-            print('No tiene suficiente saldo para realizar esta opreación.')
+            print('No tiene suficiente saldo para realizar esta operación.')
             monto_salir = int(input('1)Ingresar un nuevo monto 2)Salir al menu inicial: '))
             if monto_salir == 2:
                 salida = True
@@ -103,7 +103,7 @@ def menuPrincipal ():
     """
     opcion = 0
     while opcion != 4:
-        opcion = int(input('1)Consultas 2)Retiros 3)Transferencias 4)Salir:'))
+        opcion = int(input('1)Consultas 2)Retiros 3)Transferencias 4)Salir: '))
         if opcion == 1:
             print('Consultas')
             consultas()
