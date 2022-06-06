@@ -36,6 +36,8 @@ def transferencias():
             cuenta -= monto
             print('Cuenta errónea, en 3 días visualizará la devolución en sus "Movimientos"')
         cuentaSaldo()
+    else:
+        print('Monto inválido, volviendo al menú.')
 
 def ingresoMonto ():
     global cuenta, moneda, monto, monto_ok
@@ -43,7 +45,7 @@ def ingresoMonto ():
     monto_ok = False
     intentos = 0
     salida = False
-    while salida == False:
+    while salida != True:
         intentos += 1
         monto = float(input(f'Ingresar monto en {moneda}: '))
         if monto <= cuenta:
@@ -74,6 +76,8 @@ def retiros ():
                 print(f'Retiro en {moneda} de: {monto}')
         else:
             print('Clave incorrecta, retiro cancelado')
+    else:
+        print('Monto inválido, volviendo al menú.')
 
 def verificacion ():
     global verificado, clave_o
