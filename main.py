@@ -132,13 +132,14 @@ def eleccionMoneda ():
 def movimientos():
    elegir_mon = int(input('1.Pesos 2.Soles: '))
    i = 0
-   rango = range(0,10)
    if elegir_mon == 1:
-       for i in rango:
+       while i < 10:
            print(f'{random.uniform(99,9999):.2f} pesos')
+           i += 1
    else:
-        for i in rango:
+        while i < 10:
             print(f'{(random.uniform(99,9999)*0.04193):.2f} soles')
+            i += 1
 
 def consultas ():
     opcion_con = 0
