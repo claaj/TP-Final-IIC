@@ -1,7 +1,7 @@
 #############################################
 # Mauricio Lopez - @Morris-py
 # Matías Cajal - @claaj
-# UNRN Andina - Introducción a la Ingenieria en Computación - 2022
+# UNRN Andina - Introducción a la Ingeniería en Computación - 2022
 # TP Final
 ################
 import random
@@ -87,7 +87,7 @@ def verificacion ():
     dni = 0
     salida = False
     while salida != True:
-        print("intento número: "+ str(intentos+1))   
+        print(f"Intento N°{intentos+1}")
         clave = int(input("Ingrese su clave: "))
         if clave == clave_o:
             dni = int(input("Ingrese su DNI: "))
@@ -117,6 +117,11 @@ def menuPrincipal ():
         elif opcion == 3:
             print('Transferencia')
             transferencias()
+        elif opcion == 4:
+            print('Saliendo...')
+            print('Retire su tarjeta, Gracias por utilizar nuestros servicios!')
+        else:
+            print('Opción incorrecta, intente nuevamente')
 
 def eleccionMoneda ():
     global cuenta, moneda
@@ -130,16 +135,22 @@ def eleccionMoneda ():
         moneda = "soles"
 
 def movimientos():
-   elegir_mon = int(input('1.Pesos 2.Soles: '))
-   i = 0
-   if elegir_mon == 1:
-       while i < 10:
-           print(f'{random.uniform(99,9999):.2f} pesos')
-           i += 1
-   else:
-        while i < 10:
-            print(f'{(random.uniform(99,9999)*0.04193):.2f} soles')
-            i += 1
+    opcion_ok = False
+    i = 0
+    while opcion_ok != True:
+        elegir_mon = int(input('1)Pesos 2)Soles: '))
+        if elegir_mon == 1:
+            while i < 10:
+                print(f'{random.uniform(99,9999):.2f} pesos')
+                i += 1
+            opcion_ok = True
+        elif elegir_mon == 2:
+            while i < 10:
+                print(f'{(random.uniform(99,9999)*0.04193):.2f} soles')
+                i += 1
+            opcion_ok = True
+        else:
+            print('Opción incorrecta, intente nuevamente')
 
 def consultas ():
     opcion_con = 0
@@ -157,11 +168,9 @@ def consultas ():
 
 #Main
 if __name__ == '__main__':
-    print('Hola mundo!') 
+    print('Bienvenido al Banco InterBanca!')
     verificacion()
     if verificado == 1:
         menuPrincipal()
     else:
         print("Su tarjeta ha sido retenida")
-    print('Programa finalizado!')
-
