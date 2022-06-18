@@ -55,9 +55,16 @@ def ingresoMonto ():
             salida = True
         else:
             print('No tiene suficiente saldo para realizar esta operación.')
-            monto_salir = int(input('1)Ingresar un nuevo monto 2)Salir al menu inicial: '))
-            if monto_salir == 2:
-                salida = True
+            opcion_ok = False
+            while opcion_ok != True:
+                monto_salir = int(input('1)Ingresar un nuevo monto 2)Salir al menu inicial: '))
+                if monto_salir == 1:
+                    opcion_ok = True
+                if monto_salir == 2:
+                    salida = True
+                    opcion_ok = True
+                else:
+                    print('Opción incorrecta, intente nuevamente')
 
 # Función retiros principal
 def retiros ():
@@ -165,18 +172,28 @@ def movimientos():
             print('Opción incorrecta, intente nuevamente')
 
 def consultas ():
-    opcion_con = 0
-    imp_ticket = 0
-    opcion_con = int(input("1)Posición Global 2)Movimientos: "))
-    if opcion_con == 1:
-        eleccionMoneda()
-        imp_ticket = int(input("1)Ticket 2)Ver en pantalla: "))
-        if imp_ticket == 1:
-            print("Ticket impreso, retírelo")
+    opcion_ok = False
+    opcion2_ok = False
+    while opcion_ok != True:
+        opcion_con = int(input("1)Posición Global 2)Movimientos: "))
+        if opcion_con == 1:
+            eleccionMoneda()
+            while opcion2_ok != True:
+                imp_ticket = int(input("1)Ticket 2)Ver en pantalla: "))
+                if imp_ticket == 1:
+                    print("Ticket impreso, retírelo")
+                    opcion2_ok = True
+                elif imp_ticket == 2:
+                    print(f"Tu cuenta en {moneda} es de {cuenta:.2f}.")
+                    opcion2_ok = True
+                else:
+                    print('Opción incorrecta, intente nuevamente')
+            opcion_ok = True
+        elif opcion_con == 2:
+            movimientos()
+            opcion_ok = True
         else:
-            print(f"Tu cuenta en {moneda} es de {cuenta:.2f}.")
-    else:
-        movimientos()
+            print('Opción incorrecta, intente nuevamente')
 
 #Main
 if __name__ == '__main__':
