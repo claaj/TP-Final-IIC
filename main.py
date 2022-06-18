@@ -69,11 +69,17 @@ def retiros ():
         if clave_retiro == clave_o:
             cuenta = cuenta - monto
             cuentaSaldo()
-            imp_ticket = int(input("1)Ticket 2)Ver en pantalla: "))
-            if imp_ticket == 1:
-                print("Ticket impreso, retírelo")
-            else:
-                print(f'Retiro en {moneda} de: {monto}')
+            opcion_ok = False
+            while opcion_ok != True:
+                imp_ticket = int(input("1)Ticket 2)Ver en pantalla: "))
+                if imp_ticket == 1:
+                    print("Ticket impreso, retírelo")
+                    opcion_ok = True
+                elif imp_ticket == 2:
+                    print(f'Retiro en {moneda} de: {monto}')
+                    opcion_ok = True
+                else:
+                    print('Opción incorrecta, intente nuevamente')
         else:
             print('Clave incorrecta, retiro cancelado')
     else:
@@ -126,13 +132,19 @@ def menuPrincipal ():
 def eleccionMoneda ():
     global cuenta, moneda
     elegir_mon = 0
-    elegir_mon = int(input("1)Pesos 2)Soles: "))
-    if elegir_mon == 1:
-        cuenta = saldo_pesos
-        moneda = "pesos"
-    else:
-        cuenta = saldo_pesos * conv_soles
-        moneda = "soles"
+    opcion_ok = False
+    while opcion_ok != True:
+        elegir_mon = int(input("1)Pesos 2)Soles: "))
+        if elegir_mon == 1:
+            cuenta = saldo_pesos
+            moneda = "pesos"
+            opcion_ok = True
+        elif elegir_mon == 2:
+            cuenta = saldo_pesos * conv_soles
+            moneda = "soles"
+            opcion_ok = True
+        else:
+            print('Opción incorrecta, intente nuevamente')
 
 def movimientos():
     opcion_ok = False
